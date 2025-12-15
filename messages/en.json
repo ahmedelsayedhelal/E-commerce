@@ -1,16 +1,19 @@
 {
   "Header": {
+    "head": "E-shop",
     "home": "Home",
     "products": "Products",
-    "categories": "Categories"
-
+    "categories": "Categories",
+    "about": "About",
+    "contact": "Contact us",
+    "featuredProducts": "Featured Products",
+    "featuredcategories": "Featured Categories",
+    "viewProduct": "View Product"
   },
-
-    "Search": {
+  "Search": {
     "placeholder": "Search products...",
     "aria": "Search products"
   },
-  
   "Footer": {
     "description": "A modern multi-language e-commerce experience.",
     "linksTitle": "Quick Links",
@@ -19,9 +22,8 @@
     "products": "Products",
     "rights": "All rights reserved."
   },
-  
   "Home": {
-    "title": "Shop smarter, live better",
+    "title": "Shop Smarter, Live Better",
     "subtitle": "Discover quality products at the best prices.",
     "shopNow": "Shop Now",
     "browseCategories": "Browse Categories",
@@ -43,12 +45,4 @@
     "submitLogin": "Submit Login",
     "submitSignup": "Submit Sign Up"
   }
-
-
-
-
 }
-
-
-
-

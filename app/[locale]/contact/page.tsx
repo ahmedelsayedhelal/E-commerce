@@ -4,36 +4,33 @@ import { use } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useRouter } from "next/navigation";
-import { useAuthStore } from "@/store/useAuthStore";
+import { toast } from "sonner";
 
-export default function SignupPage({
-  params,
-}: {
+
+type Props = {
   params: Promise<{ locale: string }>;
-}) {
+};
+
+export default function ContactPage({ params }: Props) {
   const { locale } = use(params);
-  const router = useRouter();
-  const login = useAuthStore((s) => s.login);
 
   // ✅ Zod schema with localized messages
   const schema = z.object({
     name: z
       .string()
-      .min(3, locale === "ar" ? "الاسم قصير جدًا" : "Name is too short")
-      .max(12,locale ==="ar" ? "الاسم لا يزيد عن 12 حرف " : "You musn't exceed 12 letters "),
+      .min(3, locale === "ar" ? "الاسم قصير جدًا" : "Name is too short"),
 
     email: z
       .string()
       .email(locale === "ar" ? "بريد إلكتروني غير صالح" : "Invalid email"),
 
-    password: z
+    message: z
       .string()
       .min(
-        6,
+        10,
         locale === "ar"
-          ? "كلمة المرور يجب ألا تقل عن 6 حروف"
-          : "Password must be at least 6 characters"
+          ? "الرسالة قصيرة جدًا"
+          : "Message must be at least 10 characters"
       ),
   });
 
@@ -42,21 +39,29 @@ export default function SignupPage({
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FormData>({
     resolver: zodResolver(schema),
   });
 
   const onSubmit = (data: FormData) => {
-    // Mock login
-    login({ name: data.name, email: data.email });
-    router.push(`/${locale}`);
-  };
+  console.log("Contact form data:", data);
+
+  toast.success(
+    locale === "ar"
+      ? "تم إرسال الرسالة بنجاح"
+      : "Message sent successfully"
+  );
+
+  reset();
+};
+
 
   return (
     <section className="max-w-md mx-auto py-16">
       <h1 className="mb-6 text-3xl font-bold">
-        {locale === "ar" ? "إنشاء حساب" : "Sign Up"}
+        {locale === "ar" ? "تواصل معنا" : "Contact Us"}
       </h1>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -92,29 +97,31 @@ export default function SignupPage({
           )}
         </div>
 
-        {/* Password */}
+        {/* Message */}
         <div>
-          <input
-            type="password"
-            {...register("password")}
-            placeholder={locale === "ar" ? "كلمة المرور" : "Password"}
-            className={`w-full border px-4 py-2 rounded ${
-              errors.password ? "border-red-500" : ""
+          <textarea
+            {...register("message")}
+            placeholder={locale === "ar" ? "رسالتك" : "Your message"}
+            className={`w-full border px-4 py-2 rounded min-h-30 ${
+              errors.message ? "border-red-500" : ""
             }`}
           />
-          {errors.password && (
+          {errors.message && (
             <p className="mt-1 text-sm text-red-500">
-              {errors.password.message}
+              {errors.message.message}
             </p>
           )}
         </div>
 
+        {/* Submit */}
         <button
           type="submit"
           className="w-full bg-primary text-white py-2 rounded hover:opacity-90 transition"
         >
-          {locale === "ar" ? "تسجيل" : "Sign Up"}
+          {locale === "ar" ? "إرسال" : "Send"}
         </button>
+
+        
       </form>
     </section>
   );

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Product } from "@/data/products";
+import { useTranslations } from "next-intl";
+import { use } from 'react';
 
 type Props = {
   locale: string;
@@ -19,13 +21,15 @@ async function getFeaturedProducts(): Promise<Product[]> {
   return products.slice(0, 3);
 }
 
-export async function Featuredproducts({ locale }: Props) {
-  const products = await getFeaturedProducts();
+export  function Featuredproducts({ locale }: Props) {
+  const products =  use(getFeaturedProducts());
+  const t = useTranslations("Header");
+
 
   return (
     <section className="py-16">
       <h2 className="mb-8 text-center text-2xl font-semibold">
-        Featured Products
+        {t("featuredProducts")}
       </h2>
 
       <div className="grid gap-6 md:grid-cols-3">
@@ -55,7 +59,7 @@ export async function Featuredproducts({ locale }: Props) {
               href={`/${locale}/product/${product.id}`}
               className="mt-4 text-sm font-medium text-primary hover:underline"
             >
-              View Product
+              {t("viewProduct")}
             </Link>
           </div>
         ))}

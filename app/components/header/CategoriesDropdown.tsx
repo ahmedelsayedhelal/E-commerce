@@ -13,10 +13,9 @@ export function CategoriesDropdown({ locale }: Props) {
 
   return (
     <div className="relative group">
-      {/* Trigger */}
       <button
         className="
-          font-medium
+          
           hover:text-primary
           transition
           relative

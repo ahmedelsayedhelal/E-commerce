@@ -15,6 +15,13 @@ export function NavLinks() {
         {t("home")}
       </Link>
 
+        <Link href={`/${locale}/about`} className="hover:underline">
+        {t("about")}
+      </Link>
+        <Link href={`/${locale}/contact`} className="hover:underline">
+        {t("contact")}
+      </Link>
+
       <CategoriesDropdown locale={locale} />
     </nav>
   );

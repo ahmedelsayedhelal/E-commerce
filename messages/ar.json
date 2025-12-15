@@ -1,8 +1,16 @@
 {
   "Header": {
+    "head": "متجر الكتروني ",
     "home": "الرئيسية",
     "products": "المنتجات",
-    "categories": "الأقسام"
+    "categories": "الأقسام",
+    "about" :"حول",
+    "contact" : "تواصل معنا",
+    "featuredProducts" :"المنتجات المميزة",
+    "featuredcategories": "الاقسام  المميزه",
+    "viewProduct" :"عرض المنتج"
+
+    
   },
     "Search": {
     "placeholder": "ابحث عن المنتجات...",

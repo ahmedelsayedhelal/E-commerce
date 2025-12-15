@@ -1,5 +1,7 @@
 import Link from "next/link";
 import type { Category as categories } from "@/data/categories";
+import { useTranslations } from "next-intl";
+import { use } from "react";
 type Props = {
   locale: string;
 };
@@ -15,13 +17,14 @@ async function getCategories(): Promise<categories[]> {
   return res.json();
 }
 
-export async function FeaturedCategories({ locale }: Props) {
-  const categories = await getCategories();
+export  function FeaturedCategories({ locale }: Props) {
+  const categories = use(getCategories());
+  const t = useTranslations("Header");
 
   return (
     <section className="py-16">
       <h2 className="mb-8 text-2xl font-semibold text-center">
-        Featured Categories
+        {t("featuredcategories")}
       </h2>
 
       <div className="grid gap-6 md:grid-cols-3">

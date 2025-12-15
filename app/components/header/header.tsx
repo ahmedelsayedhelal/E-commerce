@@ -7,17 +7,24 @@ import { NavLinks } from "./NavLinks";
 import { SearchInput } from "./SearchInput";
  import { useShopStore } from "@/store/useShopStore";
   import { AccountMenu } from "./AccountMenu";
+import { ModeToggle } from "../theme/themetoggle";
+import { useTranslations } from "next-intl";
+
 export function Header() {
   const cartCount = useShopStore((state) =>
   state.cart.reduce((sum, item) => sum + item.quantity, 0)
 );
+const t = useTranslations("Header")
+
+
+
 
   return (
     <header className="sticky top-0 z-50 border-b bg-background">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         
         <Link href="/" className="text-xl font-bold">
-          E-Shop
+        {t("head")}
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">
@@ -27,6 +34,7 @@ export function Header() {
         <div className="flex items-center gap-4">
          <SearchInput />
           <LanguageSwitcher />
+          <ModeToggle/>
 
           <Link href="/wishlist" aria-label="Wishlist">
             <Heart className="h-5 w-5" />
