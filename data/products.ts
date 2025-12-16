@@ -12,7 +12,7 @@ export type Product = {
 
 export const products: Product[] = [
   {
-    id: "p1",
+    id: "1",
     name_en: "Basic Tee",
     name_ar: "تي شيرت أساسي",
     description_en: "Soft cotton tee.",
@@ -23,7 +23,7 @@ export const products: Product[] = [
     inStock: true
   },
   {
-    id: "p2",
+    id: "2",
     name_en: "Running Shoes",
     name_ar: "حذاء جري",
     description_en: "Comfortable running shoes.",
@@ -34,7 +34,7 @@ export const products: Product[] = [
     inStock: true
   },
     {
-    id: "p3",
+    id: "3",
     name_en: "Gold Necklace",
     name_ar: "سلسله ذهبية",
     description_en: "Comfortable running shoes.",
@@ -45,7 +45,7 @@ export const products: Product[] = [
     inStock: true
   },
   {
-    id: "p4",
+    id: "4",
     name_en: "Running Shoes",
     name_ar: "حذاء جري",
     description_en: "Comfortable running shoes.",
@@ -56,7 +56,7 @@ export const products: Product[] = [
     inStock: true
   },
    {
-    id: "p5",
+    id: "5",
     name_en: "Ring",
     name_ar: "خاتم",
     description_en: "Comfortable running shoes.",
@@ -68,7 +68,7 @@ export const products: Product[] = [
   },
  
    {
-    id: "p6",
+    id: "6",
     name_en: "Mobile Phone",
     name_ar: "هاتف محمول",
     description_en: "Comfortable running shoes.",
@@ -79,7 +79,7 @@ export const products: Product[] = [
     inStock: true
   },
    {
-    id: "p7",
+    id: "7",
     name_en: "laptop",
     name_ar: "لابتوب",
     description_en: "Comfortable running shoes.",

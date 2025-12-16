@@ -4,7 +4,6 @@ import Link from "next/link";
 import { ShoppingCart, Heart } from "lucide-react";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { NavLinks } from "./NavLinks";
-import { SearchInput } from "./SearchInput";
  import { useShopStore } from "@/store/useShopStore";
   import { AccountMenu } from "./AccountMenu";
 import { ModeToggle } from "../theme/themetoggle";
@@ -32,7 +31,6 @@ const t = useTranslations("Header")
         </nav>
 
         <div className="flex items-center gap-4">
-         <SearchInput />
           <LanguageSwitcher />
           <ModeToggle/>
 

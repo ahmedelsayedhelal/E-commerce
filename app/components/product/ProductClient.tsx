@@ -64,7 +64,6 @@ const router = useRouter();
   return (
     <section className="py-16 max-w-4xl mx-auto">
       <div className="grid gap-8 md:grid-cols-2">
-        {/* Image */}
         <div className="relative h-96 w-full rounded-lg border p-4">
           <Image
             src={product.image}
@@ -75,7 +74,6 @@ const router = useRouter();
           />
         </div>
 
-        {/* Info */}
         <div>
           <h1 className="mb-4 text-3xl font-bold">
             {locale === "ar" ? product.name_ar : product.name_en}
@@ -91,7 +89,6 @@ const router = useRouter();
               : product.description_en}
           </p>
 
-          {/* Quantity */}
           <div className="mb-4 flex items-center gap-3">
             <span className="text-sm font-medium">
               {locale === "ar" ? "الكمية:" : "Quantity:"}
@@ -146,7 +143,6 @@ const router = useRouter();
         </div>
       </div>
 
-      {/* Related Products */}
       {relatedProducts.length > 0 && (
         <div className="mt-16">
           <h2 className="mb-6 text-2xl font-semibold">
