@@ -23,7 +23,7 @@ export default function CartPage({
 
   if (cart.length === 0) {
     return (
-      <div className="py-20 text-center min-h-screen">
+      <div className="py-20 text-center md:min-h-screen">
         <h1 className="text-2xl font-semibold mb-4">
           {locale === "ar" ? "السلة فارغة" : "Your cart is empty"}
         </h1>
@@ -42,11 +42,10 @@ export default function CartPage({
 
   return (
     <section className="max-w-4xl mx-auto py-16">
-      <h1 className="mb-8 text-3xl font-bold">
+      <h1 className="mb-8 text-3xl font-bold px-4">
         {locale === "ar" ? "سلة التسوق" : "Shopping Cart"}
       </h1>
 
-      {/* Cart Items */}
       <div className="space-y-6">
         {cart.map((item) => (
           <div
@@ -70,7 +69,6 @@ export default function CartPage({
                 ${item.price}
               </p>
 
-              {/* Quantity */}
               <div className="mt-2 flex items-center gap-2">
                 <button
                   onClick={() =>
@@ -96,7 +94,7 @@ export default function CartPage({
 
             <button
               onClick={() => removeFromCart(item.id)}
-              className="text-sm text-red-500 hover:underline"
+              className="text-sm text-red-500 hover:underline px-4"
             >
               {locale === "ar" ? "حذف" : "Remove"}
             </button>
@@ -104,9 +102,8 @@ export default function CartPage({
         ))}
       </div>
 
-      {/* Summary */}
       <div className="mt-10 flex justify-between items-center">
-        <p className="text-xl font-semibold">
+        <p className="text-xl font-semibold px-4">
           {locale === "ar" ? "الإجمالي:" : "Subtotal:"} $
           {subtotal.toFixed(2)}
         </p>

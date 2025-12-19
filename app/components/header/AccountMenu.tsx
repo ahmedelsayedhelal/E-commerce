@@ -32,7 +32,6 @@ export function AccountMenu({ locale }: { locale: string }) {
 
   return (
     <div className="relative group">
-      {/* Trigger */}
       <button
         className="
           font-medium py-2 px-2
@@ -45,7 +44,6 @@ export function AccountMenu({ locale }: { locale: string }) {
         {user.name}
       </button>
 
-      {/* Dropdown */}
       <div
         className="
           absolute top-full left-1/2

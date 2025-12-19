@@ -54,7 +54,6 @@ export function ContactForm({ locale }: Props) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-      {/* Name */}
       <div>
         <input
           {...register("name")}
@@ -70,7 +69,6 @@ export function ContactForm({ locale }: Props) {
         )}
       </div>
 
-      {/* Email */}
       <div>
         <input
           {...register("email")}
@@ -86,7 +84,6 @@ export function ContactForm({ locale }: Props) {
         )}
       </div>
 
-      {/* Message */}
       <div>
         <textarea
           {...register("message")}

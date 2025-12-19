@@ -8,7 +8,7 @@ export default function AboutPage({
   const { locale } = use(params);
 
   return (
-    <section className="max-w-3xl mx-auto py-16 space-y-6">
+    <section className="max-w-3xl mx-auto py-16 space-y-6 px-4">
       <h1 className="text-3xl font-bold">
         {locale === "ar" ? "من نحن" : "About Us"}
       </h1>

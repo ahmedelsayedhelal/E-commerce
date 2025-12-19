@@ -69,35 +69,35 @@ const router = useRouter();
             src={product.image}
             alt={locale === "ar" ? product.name_ar : product.name_en}
             fill
-            className="object-cover rounded-md"
+            className="object-contain rounded-md"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
 
         <div>
-          <h1 className="mb-4 text-3xl font-bold">
+          <h1 className="mb-4 text-3xl px-4 font-bold">
             {locale === "ar" ? product.name_ar : product.name_en}
           </h1>
 
-          <p className="mb-4 text-xl font-semibold">
+          <p className="mb-4 text-xl px-4 font-semibold">
             ${product.price}
           </p>
 
-          <p className="mb-6 text-muted-foreground">
+          <p className="mb-6 text-muted-foreground px-4">
             {locale === "ar"
               ? product.description_ar
               : product.description_en}
           </p>
 
           <div className="mb-4 flex items-center gap-3">
-            <span className="text-sm font-medium">
+            <span className="text-sm font-medium px-4">
               {locale === "ar" ? "الكمية:" : "Quantity:"}
             </span>
 
-            <div className="flex items-center border rounded-md">
+            <div className="flex items-center border rounded-md px-4">
               <button
                 onClick={decreaseQty}
-                className="px-3 py-2 hover:bg-muted"
+                className="px-4 py-2 hover:bg-muted"
                 aria-label="Decrease quantity"
               >
                 −
@@ -115,7 +115,7 @@ const router = useRouter();
             </div>
           </div>
 
-          <div className="flex gap-4 items-center">
+          <div className="flex gap-4 items-center px-4">
             <button
               onClick={handleAddToCart}
               disabled={outOfStock}
@@ -144,7 +144,7 @@ const router = useRouter();
       </div>
 
       {relatedProducts.length > 0 && (
-        <div className="mt-16">
+        <div className="mt-16 px-4">
           <h2 className="mb-6 text-2xl font-semibold">
             {locale === "ar" ? "منتجات مشابهة" : "Related Products"}
           </h2>

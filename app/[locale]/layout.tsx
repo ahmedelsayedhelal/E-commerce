@@ -55,15 +55,17 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}   suppressHydrationWarning>
-      <body>
+      <body className='min-h-screen flex flex-col'>
         <ThemeProvider   attribute="class"
           defaultTheme="system"
           enableSystem>
         <NextIntlClientProvider  messages={messages}>
           <Header />
           <Toaster position="bottom-right" richColors closeButton />
+          <main className='flex-1'>
+           {children}
 
-          {children}
+          </main>
           <Footer />
         </NextIntlClientProvider>
         </ThemeProvider>

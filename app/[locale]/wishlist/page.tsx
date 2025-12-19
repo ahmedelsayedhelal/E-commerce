@@ -22,8 +22,8 @@ export default function WishlistPage({
 
   if (wishlistProducts.length === 0) {
     return (
-      <div className="py-20 text-center min-h-screen">
-        <h1 className="text-2xl font-semibold mb-4">
+      <div className="py-20 text-center md:min-h-screen">
+        <h1 className="text-2xl font-semibold mb-4 ">
           {locale === "ar"
             ? "قائمة المفضلة فارغة"
             : "Your wishlist is empty"}
@@ -43,7 +43,7 @@ export default function WishlistPage({
 
   return (
     <section className="max-w-4xl mx-auto py-16">
-      <h1 className="mb-8 text-3xl font-bold">
+      <h1 className="mb-8 text-3xl font-bold px-4">
         {locale === "ar" ? "المفضلة" : "Wishlist"}
       </h1>
 

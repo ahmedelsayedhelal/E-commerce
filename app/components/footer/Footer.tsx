@@ -6,9 +6,9 @@ export function Footer() {
   const t = useTranslations("Footer");
 
   return (
-    <footer className="border-t bg-muted/30 mt-16">
+    <footer className="border-t bg-muted/30 mt-16 min-w-screen ">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid gap-10 md:grid-cols-3 items-start">
+        <div className="grid gap-10 md:grid-cols-3 items-center justify-center md:items-start">
           
           <div>
             <h2 className="text-xl font-bold">E-Shop</h2>

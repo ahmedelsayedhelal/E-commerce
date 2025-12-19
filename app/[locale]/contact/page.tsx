@@ -7,11 +7,10 @@ export default function ContactPage({ params }: {params: Promise <{ locale: stri
 
   return (
     <section className="max-w-md mx-auto py-16">
-      <h1 className="mb-6 text-3xl font-bold">
+      <h1 className="mb-6 text-3xl font-bold px-4">
         {locale === "ar" ? "تواصل معنا" : "Contact Us"}
       </h1>
 
-      {/* Client Component */}
       <ContactForm locale={locale} />
     </section>
   );

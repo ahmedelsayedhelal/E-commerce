@@ -36,11 +36,11 @@ export default function ProductsClient({
 
   return (
     <>
-      <h1 className="mb-8 text-3xl font-bold">
+      <h1 className="mb-8 text-3xl font-bold px-4">
         {locale === "ar" ? "كل المنتجات" : "All Products"}
       </h1>
 
-      <div className="mb-8 flex flex-wrap gap-3">
+      <div className="mb-8 flex flex-wrap gap-3 pl-4">
         <button
           onClick={() => setActiveCategory(null)}
           className={`rounded-md border px-4 py-2 text-sm transition ${
@@ -78,7 +78,7 @@ export default function ProductsClient({
                 src={product.image}
                 alt={locale === "ar" ? product.name_ar : product.name_en}
                 fill
-                className="object-cover rounded-md"
+                className="object-contain rounded-md"
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
             </div>
